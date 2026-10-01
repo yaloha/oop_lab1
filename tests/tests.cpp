@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "../array_ops.h"
 
-TEST(ArrMemorys, CreateAndInitialize) {
+TEST(ArrMemory, CreateAndInitialize) {
 std::size_t size = 5;
 int* arr = arr_utils::array_create(size);
 ASSERT_NE(arr, nullptr); 
@@ -12,13 +12,13 @@ arr_utils::array_delete(arr);
 }
 
 
-TEST(ArrMemorys, ZeroSizeEQNull) {
+TEST(ArrMemory, ZeroSizeEQNull) {
 int* arr = arr_utils::array_create(0);
 EXPECT_EQ(arr, nullptr); 
 }
 
 
-TEST(ArrMemorys, DeleteNullifPoint) {
+TEST(ArrMemory, DeleteNullifPoint) {
 int* arr = arr_utils::array_create(3);
 arr_utils::array_delete(arr);
 

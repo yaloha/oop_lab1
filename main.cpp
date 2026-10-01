@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstddef>
 #include <limits>
 #include "array_ops.h"
 
@@ -50,9 +49,15 @@ int main(){
         switch (choice) {
             case 1: {
                 if (arr != nullptr) {
-                    arr_utils::array_delete(arr);
-                    size = 0;
-                    std::cout << "old array was NULLIFIED. ERADICATED. IT IS NO MORE.\n";
+                    int del = get_safe_int("r u sure you want to overwrite the old array? 1 if yes, any other number if no:");
+                    if (del == 1) {
+                        arr_utils::array_delete(arr);
+                        size = 0;
+                        std::cout << "old array was NULLIFIED. ERADICATED. IT IS NO MORE.\n";
+                    }else{
+                        std::cout << "gotcha. well, i won't overwrite it. don't choose this option again.\n";
+                        break;
+                    }
                 }
                 size = get_safe_size_t("please enter the new arrays size:");
                 arr = arr_utils::array_create(size);

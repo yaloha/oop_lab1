@@ -4,21 +4,26 @@
 namespace arr_utils {
 
     int *array_create(std::size_t size) {
+        if (size == 0){
+            return nullptr;
+        }
         int *arr = new int[size]{};
         return arr;
     }
 
     void array_delete(int *&arr) {
         delete[] arr;
+        arr = nullptr;
     }
 
-    void array_resize(int *&arr, std::size_t size, std::size_t new_size) {
+    void array_resize(int *&arr, std::size_t &size, std::size_t new_size) {
         int *res_arr = new int[new_size]{};
         std::size_t to_copy = (size < new_size) ? size : new_size;
         for (std::size_t i = 0; i < to_copy; ++i) {
             res_arr[i] = arr[i];
         }
         delete[] arr;
+        size = to_copy;
         arr = res_arr;
     }
 

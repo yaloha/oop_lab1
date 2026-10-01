@@ -8,7 +8,7 @@ namespace arr_utils {
 
     void array_delete(int *&arr);
 
-    void array_resize(int *&arr, std::size_t size, std::size_t new_size);
+    void array_resize(int *&arr, std::size_t &size, std::size_t new_size);
 
     void array_insert(int *&arr, std::size_t &size, std::size_t pos, int value);
 

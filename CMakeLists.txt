@@ -44,4 +44,4 @@ endfunction()
 
 add_executable(oop_lab1 main.cpp array_ops.cpp)
 oop_flags(oop_lab1)
-add_test(oop_lab1_tests ${CMAKE_CURRENT_SOURCE_DIR}/tests ${CMAKE_CURRENT_SOURCE_DIR}/array_ops.cpp)
+add_test(oop_lab1_tests ${CMAKE_CURRENT_SOURCE_DIR}/tests/ ${CMAKE_CURRENT_SOURCE_DIR}/array_ops.cpp)
